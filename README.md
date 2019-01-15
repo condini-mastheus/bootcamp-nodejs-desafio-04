@@ -4,7 +4,7 @@ Calendar api with user management
 
 ## Users api
 
-´POST - /users´ - Creates a new user
+`POST - /users` - Creates a new user
 Params:
 
 ```
