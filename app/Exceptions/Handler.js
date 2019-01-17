@@ -2,8 +2,8 @@
 
 const BaseExceptionHandler = use('BaseExceptionHandler')
 const Env = use('Env')
-
 const Youch = use('Youch')
+
 /**
  * This class handles all exceptions thrown during
  * the HTTP request lifecycle.
