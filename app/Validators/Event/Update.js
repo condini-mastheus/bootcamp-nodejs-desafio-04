@@ -1,6 +1,7 @@
 'use strict'
 
 const Antl = use('Antl')
+const { rule } = use('Validator')
 
 class Update {
   get validateAll () {
@@ -13,9 +14,8 @@ class Update {
 
   get rules () {
     return {
-      name: 'required',
-      password: 'confirmed', // must pass password_confirmation in request
-      old_password: `required_if:password`
+      title: 'required',
+      date: [rule('dateFormat', 'YYYY-MM-DD HH:mm:ss')]
     }
   }
 

@@ -1,8 +1,9 @@
 'use strict'
 
 const Antl = use('Antl')
+const { rule } = use('Validator')
 
-class Update {
+class List {
   get validateAll () {
     return true
   }
@@ -13,9 +14,7 @@ class Update {
 
   get rules () {
     return {
-      name: 'required',
-      password: 'confirmed', // must pass password_confirmation in request
-      old_password: `required_if:password`
+      date: [rule('dateFormat', 'YYYY-MM-DD')]
     }
   }
 
@@ -24,4 +23,4 @@ class Update {
   }
 }
 
-module.exports = Update
+module.exports = List

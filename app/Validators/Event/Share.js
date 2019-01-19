@@ -2,7 +2,7 @@
 
 const Antl = use('Antl')
 
-class Update {
+class Shared {
   get validateAll () {
     return true
   }
@@ -13,9 +13,7 @@ class Update {
 
   get rules () {
     return {
-      name: 'required',
-      password: 'confirmed', // must pass password_confirmation in request
-      old_password: `required_if:password`
+      email: 'required|email'
     }
   }
 
@@ -24,4 +22,4 @@ class Update {
   }
 }
 
-module.exports = Update
+module.exports = Shared

@@ -25,4 +25,19 @@ Route.post('/sessions', 'SessionController.store').validator('Session/Store')
  */
 Route.group(() => {
   Route.put('/users/:id', 'UserController.update').validator('User/Update')
+
+  Route.resource('/events', 'EventController')
+    .apiOnly()
+    .validator(
+      new Map([
+        [['/events.store'], ['Event/Store']],
+        [['/events.update'], ['Event/Update']],
+        [['/events.index'], ['Event/List']]
+      ])
+    )
+
+  Route.post(
+    '/events/:events_id/share',
+    'ShareEventController.store'
+  ).validator('Event/Share')
 }).middleware(['auth'])

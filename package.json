@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "adonis serve --dev",
+    "queue": "adonis kue:listen",
     "start": "node server.js",
     "test": "node ace test"
   },
@@ -26,7 +27,11 @@
     "@adonisjs/framework": "^5.0.9",
     "@adonisjs/ignitor": "^2.0.8",
     "@adonisjs/lucid": "^6.1.3",
+    "@adonisjs/mail": "^3.0.9",
+    "@adonisjs/redis": "^2.0.7",
     "@adonisjs/validator": "^5.0.6",
+    "adonis-kue": "^5.0.1",
+    "moment": "^2.23.0",
     "pg": "^7.8.0"
   },
   "devDependencies": {
